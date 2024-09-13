@@ -31,6 +31,7 @@ async function deleteNote() {
 </template>
 
 <style scoped>
+
 .box {
   text-align: left;
   display: flex;
@@ -38,17 +39,29 @@ async function deleteNote() {
   align-items: center;
   border: 1px solid lightgray;
   margin-bottom: 10px;
-  padding: 10px 15px;
-  border-radius: 20px;
+  padding: 15px 20px; 
+  border-radius: 15px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  background-color: #fff; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease; 
+}
+
+.box:hover {
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
 }
 
 .inner-box {
   flex: 1;
+  padding-right: 10px; 
 }
 
 .texts {
-  margin: 0px;
+  margin: 0;
   word-break: break-word;
+  font-size: 1rem; 
+  line-height: 1.5; 
+  color: #333; 
 }
 
 #delete-button {
@@ -58,12 +71,18 @@ async function deleteNote() {
   color: red;
   background-color: transparent;
   border: 1px solid transparent;
-  transition: 0.2s all;
-  font-size: 30px;
-  border-radius: 20px;
+  transition: 0.3s all ease; 
+  font-size: 24px; 
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  cursor: pointer;
 }
 
 #delete-button:hover {
+  background-color: rgba(255, 0, 0, 0.1); 
   border-color: red;
 }
+
 </style>
