@@ -1,8 +1,9 @@
-<script lang="ts" setup>
+<script setup>
 import { ref } from "vue";
 import { v4 as uuidv4 } from "uuid";
+import MainPage from "./MainPage.vue"
 
-const emit = defineEmits(["backEvent"]);
+const emit = defineEmits(["changeScreen"]);
 
 const titulo = ref();
 const mensagem = ref();
@@ -20,11 +21,11 @@ async function criarNota() {
 
   await chrome.storage.local.set({ notas });
 
-  emit("backEvent");
+  emit("changeScreen", MainPage);
 }
 
 function backButton() {
-  emit("backEvent");
+  emit("changeScreen", MainPage);
 }
 </script>
 

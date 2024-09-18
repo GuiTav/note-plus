@@ -5,19 +5,15 @@ import { shallowRef } from "vue";
 
 const pagina = shallowRef(MainPage);
 
-function backEvent() {
-  pagina.value = MainPage;
-}
-
-function newNote() {
-  pagina.value = NoteEdition;
+function changeScreen(screen) {
+  pagina.value = screen;
 }
 
 </script>
 
 <template>
   <div class="container">
-    <component :is="pagina" :pagina="pagina" @backEvent="backEvent" @newNote="newNote" />
+    <component :is="pagina" @changeScreen="changeScreen" />
   </div>
 </template>
 

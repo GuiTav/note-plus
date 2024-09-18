@@ -1,8 +1,9 @@
-<script lang="ts" setup>
-import Note from "@/components/Note.vue";
+<script setup>
+import Note from "./Note.vue";
+import NoteEdition from "./NoteEdition.vue"
 import { ref } from "vue";
 
-const emit = defineEmits(["newNote"])
+const emit = defineEmits(["changeScreen"])
 
 const notas = ref([]);
 
@@ -16,7 +17,7 @@ const notas = ref([]);
 })();
 
 function newNote() {
-  emit("newNote")
+  emit("changeScreen", NoteEdition)
 }
 </script>
 
